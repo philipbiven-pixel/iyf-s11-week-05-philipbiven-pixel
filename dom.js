@@ -118,3 +118,107 @@ const body = footer.parentElement;
 
 console.log("Footer:", footer);
 console.log("Body:", body);
+
+// ================================
+// TASK 9.3 - MODIFYING CONTENT
+// ================================
+
+// 1. Change the H1 text
+const pageTitle = document.querySelector("h1");
+
+console.log("Original title:", pageTitle.textContent);
+
+pageTitle.textContent = "My DOM Practice";
+
+console.log("New title:", pageTitle.textContent);
+
+
+// 2. Change the article title
+const articleTitle = document.querySelector(".title");
+
+articleTitle.textContent = "Learning DOM Manipulation";
+
+
+// 3. Change the first paragraph
+const firstParagraph = document.querySelector(".content");
+
+firstParagraph.textContent = "I am learning how to manipulate the DOM!";
+
+
+// 4. Change a link's href
+const homeLink = document.querySelector(".nav-link");
+
+homeLink.setAttribute("href", "https://example.com");
+
+console.log("Home link:", homeLink.getAttribute("href"));
+
+
+// 5. Check if the link has a target attribute
+console.log(
+    "Has target:",
+    homeLink.hasAttribute("target")
+);
+
+
+// 6. Add a target attribute
+homeLink.setAttribute("target", "_blank");
+
+
+// 7. Add a highlight class
+articleTitle.classList.add("highlight");
+
+
+// 8. Change container styles
+const container = document.querySelector(".container");
+
+container.style.backgroundColor = "#f0f0f0";
+container.style.padding = "30px";
+container.style.borderRadius = "8px";
+
+// ================================
+// TASK 9.4 - ADDING AND REMOVING
+// ELEMENTS
+// ================================
+
+// Create a new paragraph
+const newParagraph = document.createElement("p");
+
+newParagraph.textContent = "This paragraph was created using JavaScript.";
+
+newParagraph.className = "content highlight";
+
+
+// Add it to the article
+article.appendChild(newParagraph);
+
+
+// Create a new navigation item
+function addNavItem(text, href) {
+
+    const li = document.createElement("li");
+
+    const link = document.createElement("a");
+
+    link.textContent = text;
+    link.href = href;
+    link.className = "nav-link";
+
+    li.appendChild(link);
+
+    navList.appendChild(li);
+}
+
+
+// Add new navigation links
+addNavItem("Blog", "/blog");
+addNavItem("Portfolio", "/portfolio");
+
+
+// Clone an existing navigation item
+const firstNavItem = document.querySelector(".nav-list li");
+
+const clone = firstNavItem.cloneNode(true);
+
+clone.querySelector("a").textContent = "New Link";
+
+navList.appendChild(clone);
