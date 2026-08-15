@@ -75,3 +75,46 @@ const allParagraphs = document.querySelectorAll("p");
 const lastParagraph = allParagraphs[allParagraphs.length - 1];
 
 console.log("Last paragraph:", lastParagraph);
+
+// ================================
+// TASK 9.2 - TRAVERSING THE DOM
+// ================================
+
+// 1. Select the header, then navigate to the nav
+const mainHeader = document.getElementById("main-header");
+const nav = mainHeader.querySelector("nav");
+
+console.log("Header:", mainHeader);
+console.log("Nav inside header:", nav);
+
+
+// 2. Select the first nav-link, then get its parent li
+const firstLink = document.querySelector(".nav-link");
+const parentLi = firstLink.parentElement;
+
+console.log("First link:", firstLink);
+console.log("Parent LI:", parentLi);
+
+
+// 3. Select the article, then get its next sibling
+const article = document.querySelector("article");
+const nextSection = article.nextElementSibling;
+
+console.log("Article:", article);
+console.log("Next sibling:", nextSection);
+
+
+// 4. Select the ul, then get all its child li elements
+const navList = document.querySelector(".nav-list");
+const listItems = navList.children;
+
+console.log("UL:", navList);
+console.log("LI children:", listItems);
+
+
+// 5. Start from the footer and navigate up to the body
+const footer = document.querySelector("footer");
+const body = footer.parentElement;
+
+console.log("Footer:", footer);
+console.log("Body:", body);
